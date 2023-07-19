@@ -7,7 +7,7 @@ const WAITING_INTERVAL = 300;
 
 const Icon = React.memo(({ family, name, ...props }) => (
   <span style={{ fontFamily: family }} {...props}>
-    {String.fromCodePoint(IconFamilies[family][name])}
+    {isNaN(IconFamilies[family][name]) ? String.fromCodePoint(0) : String.fromCodePoint(IconFamilies[family][name] || 0)}
   </span>
 ));
 
